@@ -1,0 +1,32 @@
+class User:
+    """User followers representation"""
+
+    def __init__(self, user_id, username):
+        self.id = user_id
+        self.username = username
+        self.followers = 0
+        self.following = 0
+
+    def follow(self, user):
+        # Count of another user
+        user.followers += 1
+        # Count of self obj
+        self.following += 1
+
+
+user_1 = User("001", "manolo")
+user_2 = User("002", "alejandro")
+
+user_1.follow(user_2)
+
+print("================")
+print(f"User: {user_1.username}\n")
+
+print(user_1.followers)
+print(user_1.following)
+
+print("\n================")
+print(f"User: {user_2.username}\n")
+
+print(user_2.followers)
+print(user_2.following)
